@@ -1,0 +1,43 @@
+// Abstract class and virtual function
+#include <iostream>
+using namespace std;
+
+class Shape{
+    protected:
+    int length,width;
+    public:
+    // pure virtual function
+    virtual int perimeter()=0;
+    
+    void set_length(int a){
+        length = a;
+    }
+    void set_width(int b){
+        width=b;
+    }
+    
+};
+
+class Rectangle: public Shape{
+    public:
+    int perimeter(){
+        return (2*(length+width));      
+    }
+};
+
+
+int main(){
+    Rectangle obj1;
+    obj1.set_length(10);
+    obj1.set_width(20);
+    cout<<"Perimeter:"<<obj1.perimeter()<<endl;
+    return 0;
+}
+
+
+/*==================================================
+Output
+===================================================
+Perimeter:60
+===================================================
+*/
